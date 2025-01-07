@@ -6,10 +6,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class TestConversionService {
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		System.out.println(ConversionService.fluidOunces(1.1f));
 		System.out.println(ConversionService.gallons(2.2f));

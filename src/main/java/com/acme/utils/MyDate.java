@@ -27,4 +27,12 @@ public class MyDate {
         this.day = d;
         this.year = y;
     }
+
+    public static void leapYears() {
+        for (int i = 999; i < 2025; i++) {
+            if ((i % 100 != 0 && i % 4 == 0) || (i % 100 == 0 && i % 400 == 0)) {
+                System.out.println("The year " + i + " is a leap year");
+            }
+        }
+    }
 }
