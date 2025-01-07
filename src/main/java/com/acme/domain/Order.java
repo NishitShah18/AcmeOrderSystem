@@ -1,4 +1,6 @@
-package org.nishit;
+package com.acme.domain;
+
+import com.acme.utils.MyDate;
 
 public class Order {
 	MyDate orderDate;
@@ -6,7 +8,7 @@ public class Order {
 	String customer;
 	String product;
 	int quantity;
-	static double taxRate;
+	public static double taxRate;
 
 	static {
 		taxRate = 0.05;

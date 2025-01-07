@@ -1,6 +1,6 @@
-package org.nishit;
+package com.acme.testing;
 
-import org.nishit.MyDate;
+import com.acme.utils.MyDate;
 
 public class TestMyDate{
 	public static void main(String[] args){
