@@ -11,7 +11,7 @@ public class MyDate {
         this.year = 2000;
     }
 
-    public MyDate(int month,int day,int year) {
+    public MyDate(int month, int day, int year) {
         this.month = month;
         this.day = day;
         this.year = year;
@@ -22,7 +22,7 @@ public class MyDate {
         return month + "/" + day + "/" + year;
     }
 
-    public void setDate(int m,int d,int y) {
+    public void setDate(int m, int d, int y) {
         this.month = m;
         this.day = d;
         this.year = y;
