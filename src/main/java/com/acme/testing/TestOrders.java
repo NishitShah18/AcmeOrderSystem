@@ -1,10 +1,7 @@
 package com.acme.testing;
 
-import com.acme.domain.Good;
-import com.acme.domain.Order;
-import com.acme.domain.Solid;
+import com.acme.domain.*;
 import com.acme.utils.MyDate;
-import com.acme.domain.Service;
 
 public class TestOrders {
     public static void main(String[] args) {
@@ -34,5 +31,11 @@ public class TestOrders {
         Service s3 = new Service("Road Runner Eradication", 14, false);
         Order birdEradication = new Order(date3, 20000, "Daffy Duck", s3, 1);
         System.out.println("The total bill for: " + birdEradication + " is " + birdEradication.computeTotal());
+
+        //In TestOrders.java pass in a Lambda expression to setRushable which returns true if the orderAmount is over 1500.
+        Order.setRushable((orderDate,orderAmount)->{return orderAmount>1500;});
+
+        System.out.println("Anvil isPriorityOrder: " + anvil.isPriorityOrder()); // true
+        System.out.println("Balloons isPriorityOrder: " + balloons.isPriorityOrder()); // false
     }
 }
