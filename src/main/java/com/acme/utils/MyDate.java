@@ -13,25 +13,6 @@ public class MyDate {
         setDate(m, d, y);
     }
 
-    public String toString() {
-        return month + "/" + day + "/" + year;
-    }
-
-    public void setDate(int m, int d, int y) {
-        if (valid(d, m, y)) {
-            day = (byte) d;
-            year = (short) y;
-            month = (byte) m;
-        }
-    }
-
-    public static void leapYears() {
-        for (int i = 1752; i <= 2020; i = i + 4) {
-            if (((i % 4 == 0) && (i % 100 != 0)) || (i % 400 == 0))
-                System.out.println("The year " + i + " is a leap year");
-        }
-    }
-
     public byte getMonth() {
         return month;
     }
@@ -62,6 +43,25 @@ public class MyDate {
         }
     }
 
+    public String toString() {
+        return month + "/" + day + "/" + year;
+    }
+
+    public void setDate(int m, int d, int y) {
+        if (valid(d, m, y)) {
+            day = (byte) d;
+            year = (short) y;
+            month = (byte) m;
+        }
+    }
+
+    public static void leapYears() {
+        for (int i = 1752; i <= 2020; i++) {
+            if (((i % 4 == 0) && (i % 100 != 0)) || (i % 400 == 0))
+                System.out.println("The year " + i + " is a leap year");
+        }
+    }
+
     private boolean valid(int day, int month, int year) {
         if (day > 31 || day < 1 || month > 12 || month < 1) {
             System.out.println("Attempting to create a non-valid date " + month + "/" + day + "/" + year);
@@ -77,5 +77,14 @@ public class MyDate {
                 return day <= 28 || (day == 29 && year % 4 == 0);
         }
         return true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof MyDate) {
+            MyDate d = (MyDate) o;
+            return (d.day == day) && (d.month == month) && (d.year == year);
+        }
+        return false;
     }
 }
