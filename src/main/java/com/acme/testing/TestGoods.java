@@ -19,5 +19,7 @@ public class TestGoods {
         System.out.println("Is " + x + " flammable?  " + x.isFlammable());
         x = paint;
         System.out.println("Is " + x + " flammable?  " + x.isFlammable());
+
+//        Good g = new Good("Acme Earthquake Pills", 1304, 0.15, Good.UnitOfMeasureType.CUBIC_FEET, false, 1);
     }
 }

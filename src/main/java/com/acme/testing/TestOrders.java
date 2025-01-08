@@ -4,6 +4,7 @@ import com.acme.domain.Good;
 import com.acme.domain.Order;
 import com.acme.domain.Solid;
 import com.acme.utils.MyDate;
+import com.acme.domain.Service;
 
 public class TestOrders {
     public static void main(String[] args) {
@@ -29,5 +30,9 @@ public class TestOrders {
         System.out.println("The total bill for: " + anvil + " is " + anvil.computeTotal());
         System.out.println("The total bill for: " + balloons + " is " + balloons.computeTotal());
 
+        MyDate date3 = new MyDate(4, 10, 2008);
+        Service s3 = new Service("Road Runner Eradication", 14, false);
+        Order birdEradication = new Order(date3, 20000, "Daffy Duck", s3, 1);
+        System.out.println("The total bill for: " + birdEradication + " is " + birdEradication.computeTotal());
     }
 }
