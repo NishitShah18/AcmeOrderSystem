@@ -1,8 +1,10 @@
 package com.acme.testing;
 
 import com.acme.domain.Good;
-import com.acme.domain.Liquid;
 import com.acme.domain.Solid;
+
+import java.util.Collections;
+import java.util.List;
 
 public class TestGoods {
     public static void main(String[] args) {
@@ -28,5 +30,7 @@ public class TestGoods {
         Good.getCatalog().add(toaster);
         System.out.println(Good.getCatalog());
         System.out.println("Flammable products: " + Good.flammablesList());
+        Collections.sort((List<Good>) Good.getCatalog());
+        System.out.println(Good.getCatalog());
     }
 }
